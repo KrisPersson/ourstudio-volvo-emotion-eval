@@ -9,7 +9,6 @@ export const Wrapper = styled.article({
   color: colors.primary.text,
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-between",
   gap: size(1),
   position: "relative",
   overflowX: "hidden",

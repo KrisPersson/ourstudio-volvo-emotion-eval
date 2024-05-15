@@ -10,11 +10,9 @@ import GraphOneDim from "../../styled-components/graphics/GraphOneDim/index";
 
 const Text = styled.div({
   color: colors.tertiary.text,
+  marginTop: size(5),
 });
-const Bold = styled.span({
-  fontWeight: 500,
-  color: colors.primary.text,
-});
+
 const Content = styled.div({
   display: "flex",
   flexDirection: "column",
