@@ -10,7 +10,6 @@ export const Wrapper = styled.article({
   flexDirection: "column",
   justifyContent: "space-between",
   gap: size(1),
-  gridColumn: "auto / span 4",
-  border: `1px solid ${colors.secondary.background}`,
+  border: `1px solid ${colors.primary.border}`,
   borderRadius: "3px",
 });

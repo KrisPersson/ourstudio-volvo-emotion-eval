@@ -33,6 +33,7 @@ export const globalStyle = css`
   #__next {
     display: grid;
     grid-template-columns: 104px 1fr;
+    gap: ${size(1)};
     min-height: 100vh;
     min-width: 100%;
   }

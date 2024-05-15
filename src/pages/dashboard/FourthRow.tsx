@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Container } from "../../styled-components/components/Container/index";
-import CardBigA from "../../styled-components/components/CardBigA/index";
+import CardBig from "../../styled-components/components/CardBig/index";
 import { colors } from "../../styles/index";
 import { GraphStack } from "../../styled-components/graphics/GraphStack/index";
 import { size } from "@/styled-components/layout/helpers";
@@ -19,9 +19,7 @@ const Content = styled.div({
   justifyContent: "space-between",
 });
 const Wrapper = styled(Grid)({
-  ["& > *"]: {
-    gridColumn: "auto / span 6",
-  },
+  gridTemplateColumns: "repeat(auto-fit, min(564px, 100%))",
 });
 
 const sourceCodeData = [
@@ -68,17 +66,17 @@ const accessControlData = [
 export default function FourthRow() {
   return (
     <Wrapper>
-      <CardBigA headline="Source code scanning" mainValue="99" mainSymbol="%">
+      <CardBig headline="Source code scanning" mainValue="99" mainSymbol="%">
         <Content>
           <GraphOneDim categories={sourceCodeData} />
           <Text>Across 26 repositories</Text>
         </Content>
-      </CardBigA>
-      <CardBigA headline="Access control" mainValue="363" mainSymbol="users">
+      </CardBig>
+      <CardBig headline="Access control" mainValue="363" mainSymbol="users">
         <Content>
           <GraphOneDim categories={accessControlData} />
         </Content>
-      </CardBigA>
+      </CardBig>
     </Wrapper>
   );
 }

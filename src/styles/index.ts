@@ -3,6 +3,7 @@ const _primitives = {
     greyscale: {
         "100": 'rgba(255, 255,  255, 1)',
         "300": 'rgba(250, 250, 250, 1)',
+        "400": 'rgba(240, 243, 244, 1)',
         "500": 'rgba(97, 97, 97, 1)',
         "700": 'rgba(48, 48, 48, 1)',
         "900": 'rgba(0, 0, 0, 1)'
@@ -31,7 +32,8 @@ export const colors = {
     primary: {
         text: _primitives.greyscale[900],
         background: _primitives.greyscale[100],
-        surface: _primitives.blue[700]
+        surface: _primitives.blue[700],
+        border: _primitives.greyscale[400]
     },
     secondary: {
         text: _primitives.greyscale[700],

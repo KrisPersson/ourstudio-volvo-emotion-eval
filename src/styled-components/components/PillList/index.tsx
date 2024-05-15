@@ -6,7 +6,7 @@ const Wrapper = styled.ul({
   gridColumn: "1 / -1",
   display: "grid",
   gridTemplateColumns: "repeat(4, 1fr)",
-  border: `1px solid ${colors.secondary.background}`,
+  border: `1px solid ${colors.primary.border}`,
   borderRadius: "3px",
   listStyle: "none",
   paddingLeft: 0,
@@ -15,6 +15,15 @@ const Wrapper = styled.ul({
   paddingBlock: size(5),
   rowGap: size(3),
   columnGap: size(2),
+  ["@media (max-width: 1250px)"]: {
+    gridTemplateColumns: "repeat(3, 1fr)",
+  },
+  ["@media (max-width: 900px)"]: {
+    gridTemplateColumns: "repeat(2, 1fr)",
+  },
+  ["@media (max-width: 650px)"]: {
+    gridTemplateColumns: "1fr",
+  },
 });
 
 type PillListProps = {

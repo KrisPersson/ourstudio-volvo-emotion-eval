@@ -3,6 +3,7 @@ import SmallCard from "../../styled-components/components/CardSmall/index";
 import { colors } from "../../styles/index";
 import { size } from "@/styled-components/layout/helpers";
 import { Grid } from "../../styled-components/components/Grid/index";
+import { TrendUp } from "@phosphor-icons/react";
 
 const Text = styled.div({
   color: colors.tertiary.text,
@@ -11,12 +12,16 @@ const Bold = styled.span({
   fontWeight: 500,
   color: colors.primary.text,
 });
-const Content = styled.div({});
-const Wrapper = styled(Grid)({
-  ["& > *"]: {
-    gridColumn: "auto / span 4",
-  },
+const IconContainer = styled.div({
+  width: size(6),
+  height: size(6),
+  borderRadius: "100vmax",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 });
+const Content = styled.div({});
+const Wrapper = styled(Grid)({});
 
 export default function SecondRow() {
   return (
@@ -29,10 +34,18 @@ export default function SecondRow() {
         mainValue="8"
         mainSymbol="%"
       >
-        <Content></Content>
+        <Content>
+          <IconContainer style={{ background: colors.danger.lighter }}>
+            <TrendUp size={24} weight="bold" color={colors.danger.darker} />
+          </IconContainer>
+        </Content>
       </SmallCard>
       <SmallCard headline="User reported incidents" mainValue="12">
-        <Content></Content>
+        <Content>
+          <IconContainer style={{ background: colors.success.lighter }}>
+            <TrendUp size={24} weight="bold" color={colors.success.darker} />
+          </IconContainer>
+        </Content>
       </SmallCard>
     </Wrapper>
   );

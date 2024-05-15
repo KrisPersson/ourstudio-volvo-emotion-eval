@@ -3,6 +3,7 @@ import Image from "next/image";
 import { size } from "../../layout/helpers";
 import { colors } from "../../../styles/index";
 import { Wrapper } from "./wrapper";
+import { TrendUp } from "@phosphor-icons/react";
 
 const Headline = styled.div({
   fontSize: "1.125rem",
@@ -23,21 +24,26 @@ const MainImgSymbol = styled(Image)({
   marginLeft: size(1),
 });
 const TopContent = styled.div({});
-const BottomContent = styled.div({});
+const BottomContent = styled.div({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  flexBasis: "100%",
+});
 
-type CardBigAProps = {
+type CardBigProps = {
   headline: string;
   mainValue: string;
   mainSymbol?: string | "crooked-arrow";
   children: React.ReactNode;
 };
 
-export default function CardBigA({
+export default function CardBig({
   headline,
   mainValue,
   mainSymbol,
   children,
-}: CardBigAProps) {
+}: CardBigProps) {
   return (
     <Wrapper>
       <TopContent>
@@ -46,14 +52,7 @@ export default function CardBigA({
         {mainSymbol && mainSymbol !== "crooked-arrow" ? (
           <MainSymbol>{mainSymbol}</MainSymbol>
         ) : (
-          mainSymbol && (
-            <MainImgSymbol
-              src={`/images/icons/${mainSymbol}.svg`}
-              width={32}
-              height={32}
-              alt={`${mainSymbol}-icon`}
-            />
-          )
+          mainSymbol && <TrendUp size={32} style={{ marginLeft: size(1) }} />
         )}
       </TopContent>
       <BottomContent>{children}</BottomContent>

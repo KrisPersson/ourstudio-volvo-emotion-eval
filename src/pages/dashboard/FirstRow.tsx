@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
 import { Container } from "../../styled-components/components/Container/index";
-import CardBigA from "../../styled-components/components/CardBigA/index";
+import CardBig from "../../styled-components/components/CardBig/index";
 import { colors } from "../../styles/index";
 import { GraphStack } from "../../styled-components/graphics/GraphStack/index";
 import { Grid } from "../../styled-components/components/Grid/index";
 import { size } from "@/styled-components/layout/helpers";
 import Image from "next/image";
+import GraphDonut from "../../styled-components/graphics/GraphDonut/index";
 
 const Text = styled.div({
   color: colors.tertiary.text,
@@ -19,6 +20,7 @@ const Content = styled.div({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
+  flexBasis: "100%",
 });
 const StackWrapper = styled.div({
   display: "grid",
@@ -47,11 +49,7 @@ const ActiveThreatsList = styled.ol({
 
 const ActiveThreatListItem = styled.li({});
 
-const Wrapper = styled(Grid)({
-  ["& > *"]: {
-    gridColumn: "auto / span 4",
-  },
-});
+const Wrapper = styled(Grid)({});
 
 const incidentsData = [
   {
@@ -70,10 +68,33 @@ const incidentsData = [
 
 const threatsData = ["threatname", "nameofthreat", "aggresivethreat"];
 
+const cfg = {
+  type: "doughnut",
+  options: {
+    plugins: {
+      datalabels: {
+        display: false,
+      },
+    },
+  },
+  data: {
+    datasets: [
+      {
+        data: [92, 8],
+        backgroundColor: [colors.tertiary.surface, colors.danger.default],
+        datalabels: {
+          display: false,
+        },
+      },
+    ],
+    labels: ["a", "b"],
+  },
+};
+
 export default function FirstRow() {
   return (
     <Wrapper>
-      <CardBigA
+      <CardBig
         headline="Severe incidents handled"
         mainValue="43"
         mainSymbol="crooked-arrow"
@@ -94,17 +115,18 @@ export default function FirstRow() {
             })}
           </StackWrapper>
         </Content>
-      </CardBigA>
-      <CardBigA
+      </CardBig>
+      <CardBig
         headline="Patch ratio critical applications"
         mainValue="92"
         mainSymbol="%"
       >
         <Content>
+          <GraphDonut data={cfg.data} />
           <Text>Top 50 critical applications</Text>
         </Content>
-      </CardBigA>
-      <CardBigA headline="Active threats tracked" mainValue="16">
+      </CardBig>
+      <CardBig headline="Active threats tracked" mainValue="16">
         <ActiveThreatsList>
           {threatsData.map((item) => (
             <ActiveThreatListItem>{item}</ActiveThreatListItem>
@@ -120,7 +142,7 @@ export default function FirstRow() {
             Peak active threats <Bold>24</Bold>
           </Text>
         </Content>
-      </CardBigA>
+      </CardBig>
     </Wrapper>
   );
 }

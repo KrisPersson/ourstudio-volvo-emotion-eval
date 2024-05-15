@@ -7,6 +7,7 @@ const Pill = styled.div({
   paddingInline: size(1),
   paddingBlock: size(0.1),
   maxWidth: "fit-content",
+  maxHeight: "26px",
   display: "flex",
   justifyContent: "center",
 });
