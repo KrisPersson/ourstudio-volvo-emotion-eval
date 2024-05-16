@@ -4,7 +4,7 @@ import { colors } from "../../../styles/index";
 
 export const Wrapper = styled.article({
   paddingBlock: "var(--big-card-block-padding)",
-  paddingInline: size(4),
+  paddingInline: size(2),
   backgroundColor: colors.secondary.background,
   color: colors.primary.text,
   display: "flex",
@@ -12,4 +12,7 @@ export const Wrapper = styled.article({
   gap: size(1),
   position: "relative",
   overflowX: "hidden",
+  ["@media (min-width: 500px)"]: {
+    paddingInline: size(4),
+  },
 });

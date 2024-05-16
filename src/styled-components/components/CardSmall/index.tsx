@@ -22,15 +22,9 @@ const MainImgSymbol = styled(Image)({
   display: "inline",
   marginLeft: size(1),
 });
-const Graphic = styled(Image)({
-  display: "inline",
-  marginLeft: size(1),
-});
+
 const TextContent = styled.div({
   gridColumn: "1 / span 1",
-  // display: "flex",
-  // flexDirection: "column",
-  // justifyContent: "center",
 });
 const GraphicsContent = styled.div({
   gridColumn: "2 / span 1",

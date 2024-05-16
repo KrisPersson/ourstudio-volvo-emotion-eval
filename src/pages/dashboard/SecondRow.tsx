@@ -5,13 +5,6 @@ import { size } from "@/styled-components/layout/helpers";
 import { Grid } from "../../styled-components/components/Grid/index";
 import { TrendUp } from "@phosphor-icons/react";
 
-const Text = styled.div({
-  color: colors.tertiary.text,
-});
-const Bold = styled.span({
-  fontWeight: 500,
-  color: colors.primary.text,
-});
 const IconContainer = styled.div({
   width: size(6),
   height: size(6),
@@ -21,7 +14,16 @@ const IconContainer = styled.div({
   alignItems: "center",
 });
 const Content = styled.div({});
-const Wrapper = styled(Grid)({});
+const Wrapper = styled(Grid)({
+  ["& > *"]: {
+    gridColumn: "auto / span 12",
+  },
+  ["@media (min-width: 1250px)"]: {
+    ["& > *"]: {
+      gridColumn: "auto / span 4",
+    },
+  },
+});
 
 export default function SecondRow() {
   return (

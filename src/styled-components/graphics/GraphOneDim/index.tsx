@@ -74,6 +74,7 @@ export default function GraphOneDim({ categories }: GraphOneDimProps) {
     return (
       <StapleItem
         style={{ width: `${itemValuePercentage}%`, background: item.color }}
+        key={"staple" + i}
       />
     );
   });
@@ -82,7 +83,10 @@ export default function GraphOneDim({ categories }: GraphOneDimProps) {
     const itemValuePercentage = (item.value / totalValue) * 100;
 
     return (
-      <DataItem style={{ width: `${itemValuePercentage}%` }}>
+      <DataItem
+        style={{ width: `${itemValuePercentage}%` }}
+        key={"dataitem" + i}
+      >
         {indexOfItemsNeedingPusherLine.includes(i) && (
           <PusherLine
             style={{

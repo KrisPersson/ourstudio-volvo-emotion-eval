@@ -1,9 +1,5 @@
-import styled from "@emotion/styled";
 import PillListItem from "../../styled-components/components/PillListItem/index";
 import PillList from "../../styled-components/components/PillList/index";
-
-import { colors } from "../../styles/index";
-import { size } from "@/styled-components/layout/helpers";
 
 const data = [
   {

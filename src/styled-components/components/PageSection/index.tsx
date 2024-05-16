@@ -1,5 +1,4 @@
 import { colors } from "../../../styles/index";
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { size } from "../../layout/helpers";
 import { Container } from "../Container/index";

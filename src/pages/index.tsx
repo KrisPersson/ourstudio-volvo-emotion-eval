@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import Page from "../styled-components/components/Page/index";
 import PageHeader from "../styled-components/components/PageHeader/index";
 import PageSection from "../styled-components/components/PageSection/index";
-import { Container } from "../styled-components/components/Container/index";
 import { dropdownData } from "./dashboard/dropdown-menu-data";
 import FirstRow from "./dashboard/FirstRow";
 import SecondRow from "./dashboard/SecondRow";
@@ -22,13 +21,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Page>
-        <Container>
-          <PageHeader
-            title="Management Dashboard"
-            tagline="Cyber Security"
-            dropdownData={dropdownData}
-          />
-        </Container>
+        <PageHeader
+          title="Management Dashboard"
+          tagline="Cyber Security"
+          dropdownData={dropdownData}
+        />
         <PageSection>
           <FirstRow />
         </PageSection>

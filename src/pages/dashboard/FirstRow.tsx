@@ -34,10 +34,11 @@ const ActiveThreatGraphic = styled(Image)({
   objectPosition: "center",
   objectFit: "contain",
   position: "absolute",
-  bottom: 0,
+  top: "248.5px",
   left: 0,
-  display: "block",
   zIndex: 1,
+  minWidth: "100%",
+  height: "auto",
 });
 
 const ActiveThreatsList = styled.ol({
@@ -49,7 +50,24 @@ const ActiveThreatsList = styled.ol({
 
 const ActiveThreatListItem = styled.li({});
 
-const Wrapper = styled(Grid)({});
+const Wrapper = styled(Grid)({
+  marginInline: "var(--ignore-gutter)",
+  ["& > *"]: {
+    gridColumn: "auto / span 12",
+  },
+  ["@media (min-width: 600px)"]: {
+    marginInline: "unset",
+
+    ["& > *"]: {
+      gridColumn: "auto / span 6",
+    },
+  },
+  ["@media (min-width: 1150px)"]: {
+    ["& > *"]: {
+      gridColumn: "auto / span 4",
+    },
+  },
+});
 
 const incidentsData = [
   {
@@ -136,7 +154,9 @@ export default function FirstRow() {
           <ActiveThreatGraphic
             src="/images/graphics/peak-active-threats.svg"
             width={368}
-            height={180}
+            height={232}
+            style={{ height: "unset" }}
+            alt="Active Threats Graphic"
           />
           <Text>
             Peak active threats <Bold>24</Bold>

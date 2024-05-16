@@ -7,9 +7,12 @@ import Image from "next/image";
 const Wrapper = styled.div({
   padding: "7px 12px",
   background: colors.secondary.background,
-  alignSelf: "flex-end",
   borderBottom: `1px solid ${colors.primary.surface}`,
   position: "relative",
+  ["@media (min-width: 600px)"]: {
+    maxHeight: "57px",
+    alignSelf: "flex-end",
+  },
 });
 
 const Label = styled.label({

@@ -2,7 +2,6 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import styled from "@emotion/styled";
 import { size } from "../../layout/helpers";
-import { colors } from "../../../styles/index";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 ChartJS.defaults.plugins.legend.align = "left";

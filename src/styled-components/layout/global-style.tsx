@@ -18,6 +18,12 @@ export const globalStyle = css`
     --font-main: "Volvo Novum", sans-serif;
     --big-card-block-padding: ${size(5)};
     --ignore-big-card-block-padding: calc(var(--big-card-block-padding) * -1);
+    --main-gutter: ${size(1)};
+    --ignore-gutter: calc(var(--main-gutter) * -1);
+
+    @media (min-width: 600px) {
+    }
+  }
 
   body {
     margin: 0;

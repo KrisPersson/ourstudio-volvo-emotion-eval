@@ -8,9 +8,12 @@ type PageProps = {
 };
 
 const Wrapper = styled.main({
-  gridColumn: "2 / -1",
+  gridColumn: "1 / -1",
   paddingBlock: size(7),
   background: colors.primary.background,
+  ["@media (min-width: 900px)"]: {
+    gridColumn: "2 / -1",
+  },
 });
 
 export default function Page({ children }: PageProps) {

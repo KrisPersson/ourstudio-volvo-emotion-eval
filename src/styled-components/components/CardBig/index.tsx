@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import Image from "next/image";
 import { size } from "../../layout/helpers";
 import { colors } from "../../../styles/index";
 import { Wrapper } from "./wrapper";
@@ -19,10 +18,7 @@ const MainSymbol = styled.span({
   display: "inline",
   marginLeft: size(1),
 });
-const MainImgSymbol = styled(Image)({
-  display: "inline",
-  marginLeft: size(1),
-});
+
 const TopContent = styled.div({});
 const BottomContent = styled.div({
   display: "flex",

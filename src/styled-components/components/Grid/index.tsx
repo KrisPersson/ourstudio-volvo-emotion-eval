@@ -3,6 +3,6 @@ import { size } from "../../layout/helpers";
 
 export const Grid = styled.div({
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, min(368px, 100%))",
+  gridTemplateColumns: "repeat(12, 1fr)",
   gap: size(3),
 });

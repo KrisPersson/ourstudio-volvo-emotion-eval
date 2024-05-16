@@ -4,11 +4,9 @@ import { colors } from "../../../styles/index";
 
 export const Wrapper = styled.div(
   {
-    maxWidth: size(15),
     borderRadius: `${size(1)} ${size(1)} 0 0`,
     padding: size(1.5),
     paddingBottom: size(2),
-    minWidth: size(15),
     textAlign: "right",
     display: "flex",
     flexDirection: "column",

@@ -1,11 +1,8 @@
 import styled from "@emotion/styled";
-import { Container } from "../../styled-components/components/Container/index";
 import CardBig from "../../styled-components/components/CardBig/index";
 import { colors } from "../../styles/index";
-import { GraphStack } from "../../styled-components/graphics/GraphStack/index";
 import { size } from "@/styled-components/layout/helpers";
 import { Grid } from "../../styled-components/components/Grid/index";
-import Image from "next/image";
 import GraphOneDim from "../../styled-components/graphics/GraphOneDim/index";
 
 const Text = styled.div({
@@ -19,7 +16,16 @@ const Content = styled.div({
   justifyContent: "space-between",
 });
 const Wrapper = styled(Grid)({
-  gridTemplateColumns: "repeat(auto-fit, min(564px, 100%))",
+  marginInline: "var(--ignore-gutter)",
+
+  ["& > *"]: {
+    gridColumn: "auto / span 12",
+  },
+  ["@media (min-width: 900px)"]: {
+    ["& > *"]: {
+      gridColumn: "auto / span 6",
+    },
+  },
 });
 
 const sourceCodeData = [

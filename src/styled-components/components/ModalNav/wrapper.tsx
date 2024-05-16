@@ -5,7 +5,10 @@ import { colors } from "../../../styles/index";
 export const Wrapper = styled.div({
   height: "100vh",
   maxHeight: "100vh",
-  position: "fixed",
+  position: "absolute",
+  left: 0,
+  top: 0,
+  width: "100%",
   paddingInline: size(2),
   paddingBlock: size(3),
   backgroundColor: colors.secondary.background,
@@ -13,8 +16,8 @@ export const Wrapper = styled.div({
   flexDirection: "column",
   justifyContent: "space-between",
   gap: size(3),
-  gridColumn: "1 / 2",
-  ["@media (max-width: 899px)"]: {
+  zIndex: 11,
+  ["@media (min-width: 900px)"]: {
     position: "unset",
     display: "none",
   },
