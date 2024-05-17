@@ -48,7 +48,6 @@ export default function PillListItem({ label, value }: PillListItemProps) {
       : value > 77
       ? colors.warning.darker
       : colors.danger.darker;
-  console.log(color);
   return (
     <Wrapper>
       <Pill style={{ background: color }}>

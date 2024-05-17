@@ -8,7 +8,6 @@ ChartJS.defaults.plugins.legend.align = "left";
 ChartJS.defaults.elements.arc.borderRadius = "10px";
 
 const Wrapper = styled.div({
-  maxWidth: size(17.75),
   marginInline: "auto",
 });
 type ChartData = {
@@ -18,11 +17,12 @@ type DataSet = { data: Data };
 type Data = number[];
 type DoughnutProps = {
   data: ChartData;
+  maxWidth: string;
 };
 
-export default function GraphDonut({ data }: DoughnutProps) {
+export default function GraphDonut({ data, maxWidth }: DoughnutProps) {
   return (
-    <Wrapper>
+    <Wrapper style={{ maxWidth: maxWidth }}>
       <Doughnut data={data} />
     </Wrapper>
   );

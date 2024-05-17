@@ -4,6 +4,7 @@ import { colors } from "../../styles/index";
 import { size } from "@/styled-components/layout/helpers";
 import { Grid } from "../../styled-components/components/Grid/index";
 import { TrendUp } from "@phosphor-icons/react";
+import GraphDonut from "../../styled-components/graphics/GraphDonut/index";
 
 const IconContainer = styled.div({
   width: size(6),
@@ -25,11 +26,43 @@ const Wrapper = styled(Grid)({
   },
 });
 
+const DonutWrapper = styled.div({
+  transform: "translate(6px, -11px)",
+});
+
+const cfg = {
+  type: "doughnut",
+  options: {
+    plugins: {
+      datalabels: {
+        display: false,
+      },
+    },
+  },
+  data: {
+    datasets: [
+      {
+        data: [96, 4],
+        backgroundColor: [colors.tertiary.surface, colors.danger.default],
+        datalabels: {
+          display: false,
+        },
+        cutout: "65%",
+        spacing: 0,
+        borderWidth: 0,
+        borderJoinStyle: "bevel",
+      },
+    ],
+  },
+};
+
 export default function SecondRow() {
   return (
     <Wrapper>
       <SmallCard headline="Training completed" mainValue="96" mainSymbol="%">
-        <Content></Content>
+        <DonutWrapper>
+          <GraphDonut data={cfg.data} maxWidth="58px" />
+        </DonutWrapper>
       </SmallCard>
       <SmallCard
         headline="Unsuccessfull phising attempts"

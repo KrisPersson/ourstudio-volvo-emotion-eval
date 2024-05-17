@@ -4,6 +4,7 @@ import { colors } from "../../styles/index";
 import { size } from "@/styled-components/layout/helpers";
 import { Grid } from "../../styled-components/components/Grid/index";
 import GraphOneDim from "../../styled-components/graphics/GraphOneDim/index";
+import { sourceCodeData, accessControlData } from "./data";
 
 const Text = styled.div({
   color: colors.tertiary.text,
@@ -27,47 +28,6 @@ const Wrapper = styled(Grid)({
     },
   },
 });
-
-const sourceCodeData = [
-  {
-    name: "low",
-    value: 4,
-    color: colors.tertiary.surface,
-  },
-  {
-    name: "medium",
-    value: 3,
-    color: colors.secondary.surface,
-  },
-  {
-    name: "high",
-    value: 5,
-    color: colors.warning.default,
-  },
-  {
-    name: "critical",
-    value: 4,
-    color: colors.danger.default,
-  },
-];
-
-const accessControlData = [
-  {
-    name: "admin",
-    value: 64,
-    color: colors.primary.surface,
-  },
-  {
-    name: "superusers",
-    value: 55,
-    color: colors.secondary.surface,
-  },
-  {
-    name: "viewers",
-    value: 244,
-    color: colors.tertiary.surface,
-  },
-];
 
 export default function FourthRow() {
   return (

@@ -28,6 +28,8 @@ const TextContent = styled.div({
 });
 const GraphicsContent = styled.div({
   gridColumn: "2 / span 1",
+  display: "flex",
+  justifyContent: "flex-end",
 });
 
 type CardSmallProps = {

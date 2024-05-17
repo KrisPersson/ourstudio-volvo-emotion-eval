@@ -7,6 +7,7 @@ import { Grid } from "../../styled-components/components/Grid/index";
 import { size } from "@/styled-components/layout/helpers";
 import Image from "next/image";
 import GraphDonut from "../../styled-components/graphics/GraphDonut/index";
+import { threatsData, incidentsData } from "./data";
 
 const Text = styled.div({
   color: colors.tertiary.text,
@@ -69,23 +70,6 @@ const Wrapper = styled(Grid)({
   },
 });
 
-const incidentsData = [
-  {
-    value: 13,
-    label: "major",
-  },
-  {
-    value: 10,
-    label: "medium",
-  },
-  {
-    value: 20,
-    label: "minor",
-  },
-];
-
-const threatsData = ["threatname", "nameofthreat", "aggresivethreat"];
-
 const cfg = {
   type: "doughnut",
   options: {
@@ -103,9 +87,11 @@ const cfg = {
         datalabels: {
           display: false,
         },
+        borderRadius: 5,
+        spacing: 1,
+        cutout: "65%",
       },
     ],
-    labels: ["a", "b"],
   },
 };
 
@@ -140,7 +126,7 @@ export default function FirstRow() {
         mainSymbol="%"
       >
         <Content>
-          <GraphDonut data={cfg.data} />
+          <GraphDonut data={cfg.data} maxWidth={"142px"} />
           <Text>Top 50 critical applications</Text>
         </Content>
       </CardBig>
@@ -150,7 +136,7 @@ export default function FirstRow() {
             <ActiveThreatListItem>{item}</ActiveThreatListItem>
           ))}
         </ActiveThreatsList>
-        <Content>
+        <Content style={{ justifyContent: "flex-end" }}>
           <ActiveThreatGraphic
             src="/images/graphics/peak-active-threats.svg"
             width={368}
