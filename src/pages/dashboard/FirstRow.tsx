@@ -132,8 +132,8 @@ export default function FirstRow() {
       </CardBig>
       <CardBig headline="Active threats tracked" mainValue="16">
         <ActiveThreatsList>
-          {threatsData.map((item) => (
-            <ActiveThreatListItem>{item}</ActiveThreatListItem>
+          {threatsData.map((item, i) => (
+            <ActiveThreatListItem key={i + "activethreat"}>{item}</ActiveThreatListItem>
           ))}
         </ActiveThreatsList>
         <Content style={{ justifyContent: "flex-end" }}>

@@ -8,7 +8,9 @@ type DataItem = {
 };
 
 const items = backupRatingData.map((item: DataItem, i) => {
-  return <PillListItem value={item.value} label={item.label} />;
+  return (
+    <PillListItem value={item.value} label={item.label} key={i + "pill"} />
+  );
 });
 
 export default function ThirdRow() {
