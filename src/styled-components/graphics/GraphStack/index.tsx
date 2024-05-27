@@ -21,7 +21,7 @@ const Label = styled.div({
 
 export function GraphStack({ value, label, zIndex, index }: StackProps) {
   return (
-    <Wrapper label={label} value={value} zIndex={zIndex} index={index}>
+    <Wrapper $label={label} $value={value} $zIndex={zIndex} $index={index}>
       <Value>{value}</Value>
       <Label>{label}</Label>
     </Wrapper>
