@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { colors } from "../../../styles/index";
 import { size } from "../../layout/helpers";
 
-export const ButtonDiv = styled.div<{ $buttonized?: boolean }>(
+export const ButtonDiv = styled.div<{ $buttonized?: "primary" | "secondary" }>(
   {
     marginInline: "auto",
     display: "flex",
