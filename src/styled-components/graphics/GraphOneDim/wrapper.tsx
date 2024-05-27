@@ -7,12 +7,12 @@ export const Wrapper = styled.div({
   gap: size(2),
 });
 
-export const StapleWrapper = styled.div(
+export const StapleWrapper = styled.div<{ $numItems: number }>(
   {
     display: "flex",
   },
   (props) => ({
-    gap: `${24 / props.numItems}px`,
+    gap: `${24 / props.$numItems}px`,
   })
 );
 

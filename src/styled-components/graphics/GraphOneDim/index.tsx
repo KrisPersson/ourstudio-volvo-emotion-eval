@@ -106,8 +106,8 @@ export default function GraphOneDim({ categories }: GraphOneDimProps) {
 
   return (
     <Wrapper>
-      <StapleWrapper numItems={categories.length}>{StapleItems}</StapleWrapper>
-      <DataWrapper numItems={categories.length}>{DataItems}</DataWrapper>
+      <StapleWrapper $numItems={categories.length}>{StapleItems}</StapleWrapper>
+      <DataWrapper $numItems={categories.length}>{DataItems}</DataWrapper>
     </Wrapper>
   );
 }
