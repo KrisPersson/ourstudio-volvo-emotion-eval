@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import { size } from "../../layout/helpers";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-ChartJS.defaults.elements.arc.borderRadius = "10px";
 
 const Wrapper = styled.div({
   marginInline: "auto",
