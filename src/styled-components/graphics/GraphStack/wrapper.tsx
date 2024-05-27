@@ -4,9 +4,9 @@ import { colors } from "../../../styles/index";
 
 export const Wrapper = styled.div<{
   $label: string;
-  $zIndex: number;
+  $zIndex: number | undefined;
   $value: number;
-  $index: number;
+  $index: number | undefined;
 }>(
   {
     borderRadius: `${size(1)} ${size(1)} 0 0`,
