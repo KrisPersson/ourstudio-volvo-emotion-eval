@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Container } from "../../styled-components/components/Container/index";
 import CardBig from "../../styled-components/components/CardBig/index";
 import { colors } from "../../styles/index";
 import { GraphStack } from "../../styled-components/graphics/GraphStack/index";
@@ -7,7 +6,7 @@ import { Grid } from "../../styled-components/components/Grid/index";
 import { size } from "@/styled-components/layout/helpers";
 import Image from "next/image";
 import GraphDonut from "../../styled-components/graphics/GraphDonut/index";
-import { threatsData, incidentsData } from "./data";
+import { threatsData, incidentsData } from "../../data/data";
 
 const Text = styled.div({
   color: colors.tertiary.text,
@@ -133,7 +132,9 @@ export default function FirstRow() {
       <CardBig headline="Active threats tracked" mainValue="16">
         <ActiveThreatsList>
           {threatsData.map((item, i) => (
-            <ActiveThreatListItem key={i + "activethreat"}>{item}</ActiveThreatListItem>
+            <ActiveThreatListItem key={i + "activethreat"}>
+              {item}
+            </ActiveThreatListItem>
           ))}
         </ActiveThreatsList>
         <Content style={{ justifyContent: "flex-end" }}>

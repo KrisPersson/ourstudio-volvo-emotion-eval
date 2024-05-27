@@ -1,4 +1,4 @@
-import { colors } from "../../styles/index"
+import { colors } from "../styles/index"
 export const dropdownData = [
     {
         label: "Last 30 days",

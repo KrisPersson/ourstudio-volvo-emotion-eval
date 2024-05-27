@@ -4,7 +4,7 @@ import { colors } from "../../styles/index";
 import { size } from "@/styled-components/layout/helpers";
 import { Grid } from "../../styled-components/components/Grid/index";
 import GraphOneDim from "../../styled-components/graphics/GraphOneDim/index";
-import { sourceCodeData, accessControlData } from "./data";
+import { sourceCodeData, accessControlData } from "../../data/data";
 
 const Text = styled.div({
   color: colors.tertiary.text,

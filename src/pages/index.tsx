@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import Page from "../styled-components/components/Page/index";
 import PageHeader from "../styled-components/components/PageHeader/index";
 import PageSection from "../styled-components/components/PageSection/index";
-import { dropdownData } from "./dashboard/data";
+import { dropdownData } from "../data/data";
 import FirstRow from "./dashboard/FirstRow";
 import SecondRow from "./dashboard/SecondRow";
 import ThirdRow from "./dashboard/ThirdRow";

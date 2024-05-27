@@ -1,6 +1,6 @@
 import PillListItem from "../../styled-components/components/PillListItem/index";
 import PillList from "../../styled-components/components/PillList/index";
-import { backupRatingData } from "./data";
+import { backupRatingData } from "../../data/data";
 
 type DataItem = {
   label: string;
