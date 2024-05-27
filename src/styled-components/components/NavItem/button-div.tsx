@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { colors } from "../../../styles/index";
 import { size } from "../../layout/helpers";
 
-export const ButtonDiv = styled.div(
+export const ButtonDiv = styled.div<{ $buttonized?: boolean }>(
   {
     marginInline: "auto",
     display: "flex",
@@ -10,29 +10,29 @@ export const ButtonDiv = styled.div(
     justifyContent: "center",
   },
   (props) => ({
-    background: props.buttonized ? colors.primary.surface : "unset",
+    background: props.$buttonized ? colors.primary.surface : "unset",
   }),
   (props) => ({
     paddingInline:
-      props.buttonized === "primary"
+      props.$buttonized === "primary"
         ? size(2)
-        : props.buttonized === "secondary"
+        : props.$buttonized === "secondary"
         ? size(1)
         : size(0),
   }),
   (props) => ({
     paddingBlock:
-      props.buttonized === "primary"
+      props.$buttonized === "primary"
         ? size(0.5)
-        : props.buttonized === "secondary"
+        : props.$buttonized === "secondary"
         ? size(1)
         : size(0),
   }),
   (props) => ({
     borderRadius:
-      props.buttonized === "primary"
+      props.$buttonized === "primary"
         ? size(7)
-        : props.buttonized === "secondary"
+        : props.$buttonized === "secondary"
         ? size(2)
         : size(0),
   })

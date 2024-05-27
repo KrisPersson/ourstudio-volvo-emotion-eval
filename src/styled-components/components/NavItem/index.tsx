@@ -39,7 +39,7 @@ export default function NavItem({
 }: NavItemProps) {
   return (
     <StyledNavItem>
-      <ButtonDiv buttonized={buttonized}>
+      <ButtonDiv $buttonized={buttonized}>
         <Image
           src={`/images/icons/sidebar/${imgSrc}.svg`}
           width={24}
