@@ -2,7 +2,12 @@ import styled from "@emotion/styled";
 import { size } from "../../layout/helpers";
 import { colors } from "../../../styles/index";
 
-export const Wrapper = styled.div(
+export const Wrapper = styled.div<{
+  $label: string;
+  $zIndex: number;
+  $value: number;
+  $index: number;
+}>(
   {
     borderRadius: `${size(1)} ${size(1)} 0 0`,
     padding: size(1.5),
@@ -17,25 +22,25 @@ export const Wrapper = styled.div(
   },
   (props) => ({
     backgroundColor:
-      props.label === "major"
+      props.$label === "major"
         ? colors.primary.surface
-        : props.label === "medium"
+        : props.$label === "medium"
         ? colors.secondary.surface
         : colors.tertiary.surface,
   }),
   (props) => ({
     color:
-      props.label === "minor"
+      props.$label === "minor"
         ? colors.primary.surface
         : colors.primary.background,
   }),
   (props) => ({
-    height: props.value * 10 - 9 + "px",
+    height: props.$value * 10 - 9 + "px",
   }),
   (props) => ({
-    zIndex: props.zIndex || 1,
+    zIndex: props.$zIndex || 1,
   }),
   (props) => ({
-    marginLeft: props.index !== 0 ? "-20px" : "unset",
+    marginLeft: props.$index !== 0 ? "-20px" : "unset",
   })
 );
